@@ -15,6 +15,7 @@
       "type": "string",
       "editor": "select",
       "description": "Player props: each book's line and over/under price per player and stat. Game lines: moneyline, spread and total per game and book.",
+      "prefill": "player-props",
       "default": "player-props",
       "enum": [
         "player-props",
@@ -50,7 +51,8 @@
         "Premier League (game lines)",
         "MLS (game lines)"
       ],
-      "description": "Player props cover NBA, NFL, NHL, NCAAF and NCAAB."
+      "description": "Player props cover NBA, NFL, NHL, NCAAF and NCAAB.",
+      "prefill": "nba"
     },
     "books": {
       "title": "Books",
@@ -98,7 +100,8 @@
         "Spread",
         "Total"
       ],
-      "description": "Game lines only."
+      "description": "Game lines only.",
+      "prefill": "all"
     },
     "player": {
       "title": "Player",
@@ -118,7 +121,8 @@
       "default": 1000,
       "minimum": 1,
       "maximum": 100000,
-      "description": "Stop after this many rows. Each API page (up to 200 props or markets) costs one request on your own GetOdds plan."
+      "description": "Stop after this many rows. Each API page (up to 200 props or markets) costs one request on your own GetOdds plan.",
+      "prefill": 100
     }
   },
   "required": []
