@@ -1,0 +1,124 @@
+{
+  "title": "GetOdds sports odds and player props",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "apiKey": {
+      "title": "GetOdds API key",
+      "type": "string",
+      "editor": "textfield",
+      "isSecret": true,
+      "description": "Your own key. Free (1,000 requests a day, no card): https://getoddsapi.com/sign-up?utm_source=apify&utm_medium=actor&utm_campaign=getodds-scraper. Leave empty to read the keyless sample: DraftKings game lines from the sandbox, or the public player props board."
+    },
+    "marketType": {
+      "title": "Market type",
+      "type": "string",
+      "editor": "select",
+      "default": "player-props",
+      "enum": [
+        "player-props",
+        "game-lines"
+      ],
+      "enumTitles": [
+        "Player props: every book's line and over/under price per player and stat",
+        "Game lines: moneyline, spread and total per game and book"
+      ]
+    },
+    "sport": {
+      "title": "Sport",
+      "type": "string",
+      "editor": "select",
+      "default": "nba",
+      "enum": [
+        "nba",
+        "nfl",
+        "nhl",
+        "ncaaf",
+        "ncaab",
+        "mlb",
+        "epl",
+        "mls"
+      ],
+      "enumTitles": [
+        "NBA",
+        "NFL",
+        "NHL",
+        "College football (NCAAF)",
+        "College basketball (NCAAB)",
+        "MLB (game lines)",
+        "Premier League (game lines)",
+        "MLS (game lines)"
+      ],
+      "description": "Player props cover NBA, NFL, NHL, NCAAF and NCAAB."
+    },
+    "books": {
+      "title": "Books",
+      "type": "array",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "fanduel",
+          "draftkings",
+          "betrivers",
+          "pinnacle",
+          "novig",
+          "prizepicks",
+          "underdog",
+          "pick6"
+        ],
+        "enumTitles": [
+          "FanDuel",
+          "DraftKings",
+          "BetRivers",
+          "Pinnacle",
+          "Novig",
+          "PrizePicks (pick'em line)",
+          "Underdog (pick'em line)",
+          "DK Pick6 (pick'em line)"
+        ]
+      },
+      "description": "Leave empty for every book. Game lines are read from DraftKings, FanDuel, Pinnacle and Novig; books your key has no grant for are skipped with a log line."
+    },
+    "gameMarket": {
+      "title": "Game market",
+      "type": "string",
+      "editor": "select",
+      "default": "all",
+      "enum": [
+        "all",
+        "moneyline",
+        "spread",
+        "total"
+      ],
+      "enumTitles": [
+        "All",
+        "Moneyline",
+        "Spread",
+        "Total"
+      ],
+      "description": "Game lines only."
+    },
+    "player": {
+      "title": "Player",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Player props only. Name or part of it, for example tatum."
+    },
+    "stat": {
+      "title": "Stat",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Player props only. For example points, rebounds, assists, threes, pra, passing_yards, rushing_yards, receiving_yards, receptions, shots_on_goal."
+    },
+    "maxItems": {
+      "title": "Max rows",
+      "type": "integer",
+      "default": 1000,
+      "minimum": 1,
+      "maximum": 100000,
+      "description": "Stop after this many rows. Each API page (up to 200 props or markets) costs one request on your own GetOdds plan."
+    }
+  },
+  "required": []
+}

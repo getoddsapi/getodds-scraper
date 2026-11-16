@@ -1,0 +1,42 @@
+{
+  "actorSpecification": 1,
+  "name": "getodds-scraper",
+  "title": "GetOdds Sports Odds & Player Props API",
+  "version": "0.1",
+  "description": "Sports odds and player props from FanDuel, DraftKings, BetRivers, Pinnacle and Novig plus PrizePicks, Underdog and Pick6 lines, one row per line: book, player or team, market, line, price and capture time. Reads the documented getoddsapi.com API with your own free key; works without a key on the keyless sample.",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Lines",
+      "views": {
+        "overview": {
+          "title": "Lines",
+          "transformation": {
+            "fields": ["book", "sport", "market_type", "market", "event", "starts_at", "player", "team", "side", "line", "price_american", "price_decimal", "captured_at"]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "book": { "label": "Book", "format": "text" },
+              "sport": { "label": "Sport", "format": "text" },
+              "market_type": { "label": "Type", "format": "text" },
+              "market": { "label": "Market", "format": "text" },
+              "event": { "label": "Event", "format": "text" },
+              "starts_at": { "label": "Starts", "format": "date" },
+              "player": { "label": "Player", "format": "text" },
+              "team": { "label": "Team", "format": "text" },
+              "side": { "label": "Side", "format": "text" },
+              "line": { "label": "Line", "format": "number" },
+              "price_american": { "label": "American", "format": "number" },
+              "price_decimal": { "label": "Decimal", "format": "number" },
+              "captured_at": { "label": "Captured", "format": "date" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
