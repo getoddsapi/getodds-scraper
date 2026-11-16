@@ -15,28 +15,82 @@
         "overview": {
           "title": "Lines",
           "transformation": {
-            "fields": ["book", "sport", "market_type", "market", "event", "starts_at", "player", "team", "side", "line", "price_american", "price_decimal", "captured_at"]
+            "fields": [
+              "book",
+              "sport",
+              "market_type",
+              "market",
+              "event",
+              "starts_at",
+              "player",
+              "team",
+              "side",
+              "line",
+              "price_american",
+              "price_decimal",
+              "captured_at"
+            ]
           },
           "display": {
             "component": "table",
             "properties": {
-              "book": { "label": "Book", "format": "text" },
-              "sport": { "label": "Sport", "format": "text" },
-              "market_type": { "label": "Type", "format": "text" },
-              "market": { "label": "Market", "format": "text" },
-              "event": { "label": "Event", "format": "text" },
-              "starts_at": { "label": "Starts", "format": "date" },
-              "player": { "label": "Player", "format": "text" },
-              "team": { "label": "Team", "format": "text" },
-              "side": { "label": "Side", "format": "text" },
-              "line": { "label": "Line", "format": "number" },
-              "price_american": { "label": "American", "format": "number" },
-              "price_decimal": { "label": "Decimal", "format": "number" },
-              "captured_at": { "label": "Captured", "format": "date" }
+              "book": {
+                "label": "Book",
+                "format": "text"
+              },
+              "sport": {
+                "label": "Sport",
+                "format": "text"
+              },
+              "market_type": {
+                "label": "Type",
+                "format": "text"
+              },
+              "market": {
+                "label": "Market",
+                "format": "text"
+              },
+              "event": {
+                "label": "Event",
+                "format": "text"
+              },
+              "starts_at": {
+                "label": "Starts",
+                "format": "date"
+              },
+              "player": {
+                "label": "Player",
+                "format": "text"
+              },
+              "team": {
+                "label": "Team",
+                "format": "text"
+              },
+              "side": {
+                "label": "Side",
+                "format": "text"
+              },
+              "line": {
+                "label": "Line",
+                "format": "number"
+              },
+              "price_american": {
+                "label": "American",
+                "format": "number"
+              },
+              "price_decimal": {
+                "label": "Decimal",
+                "format": "number"
+              },
+              "captured_at": {
+                "label": "Captured",
+                "format": "date"
+              }
             }
           }
         }
       }
     }
-  }
+  },
+  "output": "./output_schema.json"
 }
